@@ -10,15 +10,14 @@ import ChangeName from './ChangeName';
 import Counter from './Counter';
 import Visor from './Visor';
 
-export default class App extends React.Component<IAppProps, {}> {
-  public render(): React.ReactElement<IAppProps> {
+const App  = (props:IAppProps) =>{
     const {
       description,
       isDarkTheme,
       environmentMessage,
       hasTeamsContext,
       userDisplayName
-    } = this.props;
+    } = props;
 
     const Name = styled.h1`
       color: red;
@@ -59,6 +58,6 @@ export default class App extends React.Component<IAppProps, {}> {
       </Provider>
     );
   }
-}
+export default App
 
 

@@ -10,7 +10,7 @@ const ChangeName = () => {
     const name = useSelector((state: RootState) => state.state.name)
 
     const handleClick = () => {
-        dispatch(setName('senhora batata'))
+        dispatch(setName('Juan'))
     }
 
     return <button onClick={handleClick} >mudar nome</button>

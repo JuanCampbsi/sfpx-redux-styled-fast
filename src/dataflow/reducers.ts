@@ -2,8 +2,8 @@ import {createSlice} from "@reduxjs/toolkit"
 import { SwatchColorPicker } from "office-ui-fabric-react";
 
 const initialState = {
-    name: 'Gordin',
-    sobrenome: 'Banha de Gordura',
+    name: 'Marcus',
+    sobrenome: 'Dev',
     count: 0
 }
 
