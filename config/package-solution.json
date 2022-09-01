@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "plano-diretor-client-side-solution",
+    "id": "028e4e39-0743-45c4-b143-627031385836",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.15.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "plano-diretor description"
+      },
+      "longDescription": {
+        "default": "plano-diretor description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "plano-diretor Feature",
+        "description": "The feature that activates elements of the plano-diretor solution.",
+        "id": "4c12233e-6810-4553-bf0e-4eca5136b7bc",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/plano-diretor.sppkg"
+  }
+}

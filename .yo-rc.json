@@ -1,0 +1,16 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "version": "1.15.2",
+    "libraryName": "plano-diretor",
+    "libraryId": "028e4e39-0743-45c4-b143-627031385836",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "plano-diretor",
+    "solutionShortDescription": "plano-diretor description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
