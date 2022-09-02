@@ -1,10 +1,7 @@
 import * as React from 'react';
 import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
-import {
-  IPropertyPaneConfiguration,
-  PropertyPaneTextField
-} from '@microsoft/sp-property-pane';
+import { IPropertyPaneConfiguration, PropertyPaneTextField } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
 
@@ -17,21 +14,17 @@ export interface IAppWebPartProps {
 }
 
 export default class AppWebPart extends BaseClientSideWebPart<IAppWebPartProps> {
-
   private _isDarkTheme: boolean = false;
   private _environmentMessage: string = '';
 
   public render(): void {
-    const element: React.ReactElement<IAppProps> = React.createElement(
-      App,
-      {
-        description: this.properties.description,
-        isDarkTheme: this._isDarkTheme,
-        environmentMessage: this._environmentMessage,
-        hasTeamsContext: !!this.context.sdks.microsoftTeams,
-        userDisplayName: this.context.pageContext.user.displayName
-      }
-    );
+    const element: React.ReactElement<IAppProps> = React.createElement(App, {
+      description: this.properties.description,
+      isDarkTheme: this._isDarkTheme,
+      environmentMessage: this._environmentMessage,
+      hasTeamsContext: !!this.context.sdks.microsoftTeams,
+      userDisplayName: this.context.pageContext.user.displayName,
+    });
 
     ReactDom.render(element, this.domElement);
   }
@@ -43,7 +36,8 @@ export default class AppWebPart extends BaseClientSideWebPart<IAppWebPartProps> 
   }
 
   private _getEnvironmentMessage(): string {
-    if (!!this.context.sdks.microsoftTeams) { // running in Teams
+    if (!!this.context.sdks.microsoftTeams) {
+      // running in Teams
       return this.context.isServedFromLocalhost ? strings.AppLocalEnvironmentTeams : strings.AppTeamsTabEnvironment;
     }
 
@@ -56,16 +50,13 @@ export default class AppWebPart extends BaseClientSideWebPart<IAppWebPartProps> 
     }
 
     this._isDarkTheme = !!currentTheme.isInverted;
-    const {
-      semanticColors
-    } = currentTheme;
+    const { semanticColors } = currentTheme;
 
     if (semanticColors) {
       this.domElement.style.setProperty('--bodyText', semanticColors.bodyText || null);
       this.domElement.style.setProperty('--link', semanticColors.link || null);
       this.domElement.style.setProperty('--linkHovered', semanticColors.linkHovered || null);
     }
-
   }
 
   protected onDispose(): void {
@@ -81,20 +72,20 @@ export default class AppWebPart extends BaseClientSideWebPart<IAppWebPartProps> 
       pages: [
         {
           header: {
-            description: strings.PropertyPaneDescription
+            description: strings.PropertyPaneDescription,
           },
           groups: [
             {
               groupName: strings.BasicGroupName,
               groupFields: [
                 PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
-                })
-              ]
-            }
-          ]
-        }
-      ]
+                  label: strings.DescriptionFieldLabel,
+                }),
+              ],
+            },
+          ],
+        },
+      ],
     };
   }
 }
