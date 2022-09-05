@@ -8,7 +8,8 @@
     "clean": "gulp clean",
     "test": "gulp test",
     "serve": "gulp bundle --custom-serve --max_old_space_size=4096 && fast-serve",
-    "deploy": "gulp clean & gulp bundle --ship & gulp package-solution --ship"
+    "deploy": "gulp clean & gulp bundle --ship & gulp package-solution --ship",
+    "indent": "npx prettier --write ."
   },
   "dependencies": {
     "@microsoft/sp-core-library": "1.15.2",
